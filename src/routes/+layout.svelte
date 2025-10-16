@@ -2,8 +2,8 @@
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
-	import { errorMsg } from '$lib/osai-std/api';
-	import { AlertContainer, notify, Toaster } from '$lib/components/osai/modal';
+	import { errorMsg } from '$lib/osai/api';
+	import { AlertContainer, notify, Toaster } from '$lib/osai/components/modal';
 	// import { ROUTES } from '$lib/routes';
 	import {
 		MutationCache,
@@ -13,7 +13,7 @@
 	} from '@tanstack/svelte-query';
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
-	import { createMeta } from "$lib/osai-std/page-meta";
+	import { createMeta } from '$lib/osai/page-meta';
 
 	let { children } = $props();
 	let Devtools: any = $state();
@@ -65,8 +65,8 @@
 </script>
 
 <svelte:head>
-    <title>{$pageMeta?.title}</title>
-    <meta name="description" content={$pageMeta?.subtitle ?? ''} />
+	<title>{$pageMeta?.title}</title>
+	<meta name="description" content={$pageMeta?.subtitle ?? ''} />
 </svelte:head>
 
 <Toaster richColors closeButton position="top-center" class="pointer-events-auto" />
@@ -76,22 +76,19 @@
 <ModeWatcher />
 
 <QueryClientProvider client={queryClient}>
+	<header class="sticky top-0 z-50 flex w-full items-center border-b bg-background">
+		<div class="flex h-(--header-height) w-full items-center gap-2 px-4">
+			<a class="mr-4 flex gap-3" href="/">
+				<div
+					class="flex aspect-square size-10 items-center justify-center rounded-lg text-sidebar-primary-foreground"
+				>
+					<img class="size-10 rounded-lg" src="/favicon.svg" alt="Fav" />
+				</div>
+			</a>
 
-    <header class="bg-background sticky top-0 z-50 flex w-full items-center border-b">
-    	<div class="flex h-(--header-height) w-full items-center gap-2 px-4">
-    		<a class="mr-4 flex gap-3" href="/">
-    			<div
-    				class="text-sidebar-primary-foreground flex aspect-square size-10 items-center justify-center rounded-lg"
-    			>
-    			    <img class="size-10 rounded-lg" src="/favicon.svg" alt="Fav" />
-
-    			</div>
-    		</a>
-
-    		<h1 class="text-foreground font-normal">{$pageMeta?.title ?? ''}</h1>
-
-    	</div>
-    </header>
+			<h1 class="font-normal text-foreground">{$pageMeta?.title ?? ''}</h1>
+		</div>
+	</header>
 
 	{@render children?.()}
 

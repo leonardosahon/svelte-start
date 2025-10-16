@@ -1,18 +1,17 @@
 <script lang="ts">
-	import WordEditor, { type EditorImage } from '$lib/components/osai/editor';
+	import WordEditor, { type EditorImage } from '$lib/osai/components/editor';
 
-	import { getMeta } from '$lib/osai-std/page-meta';
+	import { getMeta } from '$lib/osai/page-meta';
 
-		const pageMeta = getMeta();
+	const pageMeta = getMeta();
 
-		pageMeta.set({
-			title: 'Word Editor - Powered by TipTap/ProseMirror'
-		});
+	pageMeta.set({
+		title: 'Word Editor - Powered by TipTap/ProseMirror'
+	});
 </script>
 
-
 <div class="mx-auto max-w-4xl py-12">
-    <h1 class="text-center text-2xl mb-3">Floating Menu</h1>
+	<h1 class="mb-3 text-center text-2xl">Floating Menu</h1>
 
 	<WordEditor
 		ext={{
@@ -40,7 +39,7 @@
 </div>
 
 <div class="mx-auto max-w-4xl py-12">
-    <h1 class="text-center text-2xl mb-3">Fixed Toolbar Menu</h1>
+	<h1 class="mb-3 text-center text-2xl">Fixed Toolbar Menu</h1>
 
 	<WordEditor
 		ext={{
@@ -59,8 +58,7 @@
 
 					return data.data satisfies EditorImage;
 				}
-			},
-
+			}
 		}}
 	/>
 </div>
