@@ -1,6 +1,28 @@
-# sv
+# OSAI Svelte Starter Kit
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A comprehensive SvelteKit starter kit with pre-built UI components, rich text editor, and modern tooling for rapid development.
+
+## Features
+
+This starter kit includes:
+
+- **UI Components:** Bits UI library with custom OSAI components (buttons, cards, forms, tables, modals, sidebars, etc.)
+- **Styling:** Tailwind CSS with typography plugin, tailwind-merge, and tailwind-variants for utility-first styling
+- **Rich Text Editor:** TipTap editor with extensive extensions (tables, images, collaboration, code blocks, lists, etc.)
+- **State Management:** TanStack Query for efficient data fetching and caching
+- **Forms:** Formsnap with Zod validation and sveltekit-superforms for robust form handling
+- **Theming:** Mode-watcher for dark/light theme switching
+- **Icons:** Lucide icons for consistent iconography
+- **Notifications:** Svelte Sonner for toast notifications
+- **Animations:** Tailwind Animate CSS for smooth transitions
+
+## Installation
+
+This project uses pnpm for dependency management. Install dependencies with:
+
+```sh
+pnpm install
+```
 
 ## Creating a project
 
