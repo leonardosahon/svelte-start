@@ -5,14 +5,14 @@ const PAGE_CONTEXT_KEY = Symbol('page-og-metadata');
 
 // OG Meta Data props.
 // This will be populated with time
-export interface PageContext {
+export interface PageMetaContext {
 	title: string;
 	subtitle?: string;
 	image?: string;
 }
 
 export function createMeta() {
-	const store = writable<PageContext>({ title: '' });
+	const store = writable<PageMetaContext>({ title: '' });
 	setContext(PAGE_CONTEXT_KEY, store);
 	return store;
 }
