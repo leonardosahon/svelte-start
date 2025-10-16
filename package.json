@@ -71,12 +71,11 @@
 		"typescript": "^5.9.2",
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "^7.1.7",
-		"vite-plugin-devtools-json": "^1.0.0"
-	},
-	"dependencies": {
+		"vite-plugin-devtools-json": "^1.0.0",
 		"@tanstack/svelte-query": "^6.0.1",
 		"@tanstack/svelte-query-devtools": "^6.0.0",
 		"sveltekit-superforms": "^2.27.4",
 		"zod": "^4.1.12"
 	}
+
 }
